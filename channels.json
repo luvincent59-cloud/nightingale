@@ -1,0 +1,9 @@
+{
+  "staff_referral": {"anonymous": {"day": "A care-team member shared this topic with you: {topic}. What would you like to understand first?", "night": "You can explore the topic your care team shared: {topic}. What would help right now?"}},
+  "social_comment": {"handle": {"day": "Thanks for your interest in our post. You can ask general questions here privately, before sharing contact details.", "night": "Thanks for visiting from our post. You can explore general questions here now; the clinic team will review messages during opening hours."}},
+  "instagram_ad_click": {"anonymous": {"day": "Explore {topic} at your own pace. You can ask about services before signing up.", "night": "Explore {topic} at your own pace. You can ask general questions now, even outside clinic hours."}},
+  "google_ad_click": {"anonymous": {"day": "Looking into {topic}? I can explain the clinic's services and help you prepare questions.", "night": "Looking into {topic}? I can help you prepare questions while the clinic is closed."}},
+  "website_widget": {"anonymous": {"day": "You're viewing {topic}. What would you like to know about this service?", "night": "You're viewing {topic}. Ask a general question now; the clinic team can follow up later."}},
+  "lead_form": {"anonymous": {"day": "Thanks for reaching out. You can ask general questions anonymously; contact details are shared only when you choose.", "night": "Thanks for reaching out. Ask a general question now; contact details are shared only when you choose."}},
+  "google_reviews": {"anonymous": {"day": "Questions after reading reviews? Ask about the clinic's services here.", "night": "Questions after reading reviews? Ask here now; the clinic team returns during opening hours."}}
+}

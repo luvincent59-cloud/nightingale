@@ -1,0 +1,49 @@
+# Nightingale: A Failure-First Product Assessment
+
+## Recommendation
+
+Build Nightingale first as a **clinic-specific, accessible first-contact and patient-to-clinician handoff**, not as a general symptom chatbot or a broad social-media acquisition engine. Many people can already ask a general AI system about symptoms; Nightingale must offer something a generic answer cannot: what this clinic can actually do, how the concern will be handled, and a continuity-preserving route to a human. The product succeeds when a visitor understands that value before sharing identity, earlier words reach the care team without repetition, and the care team can respond sustainably.
+
+The current synthetic-data prototype demonstrates that sequence locally. It does not prove that patients want to use it, clinicians will incorporate it into their workflow, or a clinic can reliably respond. A supervised, single-clinic experiment is the responsible next step; a real-patient rollout next week is not.
+
+## Where the journey is most likely to break
+
+| Moment | Failure to test first | Product response and evidence needed |
+| --- | --- | --- |
+| A person arrives from a post, ad, review, website, or staff link | The invitation does not reach the people who need help, or the page feels built for confident AI users and is hard for less digitally familiar visitors to read. Age is a hypothesis to test, not a reason to assume younger people do not need the service. | Test entry routes and comprehension with different age and digital-literacy groups. Use plain language, a short path, prominent human-help options, and adjustable text size. Verify that the interface remains usable at 200% text enlargement. Do not make social volume the success metric. [W3C text resizing guidance](https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html). |
+| The first anonymous exchange | The answer repeats what any general AI tool can say about symptoms, without explaining why this clinic is worth contacting. | Lead with verified clinic-specific help: what services and support the clinic actually offers, what happens next, and how the person can prepare a useful question. Personalize the explanation to the visitor's stated goal without claiming to diagnose or inventing advantages over other clinics. Ask whether the visitor understood the clinic's distinctive, verifiable offer. |
+| The request to register | The design already aims to carry earlier words forward, but the patient may not realize that continuity is guaranteed or understand who will see the conversation. | Present seamless transfer as a product strength: show the summary and the original context that will reach the named clinic, then ask for consent. Test whether patients trust the transition and whether any actual handoff still makes them repeat themselves. |
+| The AI builds a profile | A guessed symptom or outdated medication is presented as fact. The patient feels misrepresented; the clinician stops trusting the record. | Label facts as patient-reported, show the source message, and let the patient correct or reject each material item. Test whether a clinician can use the summary without re-interviewing the patient. |
+| AI acknowledges a concern and routes it to a nurse; volume grows | Empathetic first contact works, but many routine, ambiguous, and urgent messages arrive together. Nurses become the bottleneck, and more channels amplify the same problem. | Separate immediate safety signals for prompt human attention, routine clinical questions for the nurse, and administrative or repeat questions for approved self-service information. Cluster common themes for clinic-reviewed responses; show queue capacity and overdue items. Measure staff minutes per case and acknowledgement times before expanding channels. Do not present AI comfort as a substitute for urgent care. |
+
+## The two-sided product risk
+
+Patients and clinics are buying different outcomes. The patient wants an understandable route to specific help, agency over disclosure, and a credible human next step. The clinic wants a usable concern summary and appropriately prepared consultations **without another unbounded inbox**. More messages are therefore not automatically a win. Research on secure patient messaging has found growth in both adoption and clinician workload; Nightingale should be evaluated on work saved or improved care, not message count alone. [Patient-clinician secure messaging study](https://www.jmir.org/2022/1/e17273).
+
+There is also a positioning risk. The opening thesis is about mental-health concerns being missed in consultations, while the current prototype's questions largely concern egg freezing. A focused fertility-clinic demonstration may be a good engineering slice, but it does not establish that the original mental-health communication problem has been solved. Mental-health concerns should be invited and routed appropriately when relevant, without asking AI to decide whether a person is "mentally normal" or likely to threaten staff. Screen for specific, observable safety signals and use a human-reviewed response protocol. Equating mental-health conditions with violence would stigmatize the very people the product is meant to help. [SAMHSA mental-health facts](https://www.samhsa.gov/mental-health/what-is-mental-health/facts). Choose one care pathway and one clearly observed moment of need before widening the claim.
+
+## Simplest credible first release
+
+1. **One clinic, one approved entry route, accessible to less digitally familiar visitors.** Start with a website or staff-provided link. Test plain language, few steps, large controls, and adjustable text size with real users. Add a social platform only after its permissions, invitation wording, and delivery behavior are validated.
+2. **One clinic-specific pre-consent benefit.** Explain the care options this clinic has actually verified, the next human step, and one to three relevant questions for the visit. Avoid generic symptom advice and unsupported claims of superiority over other clinics.
+3. **A reviewable handoff.** The patient sees and controls the short summary before sharing. The clinic sees the original wording, source, corrections, and acquisition channel.
+4. **A capacity-aware, human-owned inbox.** AI acknowledges and organizes the concern, while clear routing separates safety signals, routine clinical review, and repeat administrative questions. A named role monitors the queue and acknowledges each submission. The product gives a response estimate only when staffing can support it.
+5. **A narrow follow-up loop.** After a consultation, allow a patient to add a forgotten question to the same thread. This tests the thesis more directly than trying to create daily chatbot engagement.
+
+Do not spend the first pilot on voice capture, many social integrations, elaborate lead scoring, an automatic patient group chat, or a broad AI medical persona. Each adds surface area before the central handoff is proven. For repeated concerns, first offer clinic-reviewed information to many visitors without revealing who asked. If users later want peer support, make any topic-based group strictly opt-in, moderated, and separate from clinical triage; pseudonyms alone do not guarantee confidentiality. A study of online mental-health peer support found that balancing anonymity, openness, and confidentiality requires active moderation. [Peer-support study](https://pubmed.ncbi.nlm.nih.gov/32514303/). Digital mental-health interventions can struggle with ongoing engagement; a service designed for a few high-value moments may fit this problem better than one that assumes daily use. [Review of engagement and attrition](https://pubmed.ncbi.nlm.nih.gov/41603943/).
+
+## Evidence gates before expansion
+
+Use a small supervised pilot and inspect complete journeys, including failures. Do not set a numerical target without a clinic baseline.
+
+- **Reach and accessibility:** Which age and digital-literacy groups actually arrive, complete the first step, and understand the offer? Can they use the interface comfortably with larger text?
+- **Patient value:** Did the visitor understand what this clinic can specifically do before registration? Why did people leave at each step? Did they understand who would see their words?
+- **Continuity:** What proportion of handoffs required the patient to repeat the main concern? Which extracted facts were corrected or rejected?
+- **Clinic value and capacity:** How many staff minutes did each handoff require compared with the existing process? Which questions could be answered with approved reusable guidance? Did the product improve visit preparation or create a queue bottleneck?
+- **Trust and response:** Was each sent concern acknowledged by an accountable person? Did actual response times match the promise? Were any urgent concerns handled as sales leads?
+
+If patients receive only generic answers, clinicians re-ask the same questions, or the queue adds work without improving preparation, the concept has not succeeded even if registration and chat counts rise. Conversely, a small number of useful, accurately handed-off concerns may be stronger evidence than a large funnel.
+
+## Current build versus release claim
+
+The repository contains a runnable synthetic-data prototype and repeatable tests for attribution, anonymous value, consented conversion, provenance-preserving memory, risk-triggered handoff, and access isolation. These are valuable demonstrations of the intended flow. It does not yet demonstrate older-user accessibility, verified clinic-specific differentiation, a capacity-managed nurse workflow, or safe peer support. Real channel delivery, verified identity, clinical validation, complete privacy controls, and staffed nurse response also remain unproven. Present it to a mentor as a **failure-first vertical slice with explicit release gates**, not a production-ready clinic service.

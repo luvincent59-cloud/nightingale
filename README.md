@@ -37,12 +37,7 @@ python -m unittest discover -s tests -v
 
 The tests cover guest conversion, live value counts, channel openings, session expiry, simulated social-comment deduplication and attribution, escalation persistence, risk phrases, memory correction, redaction, role isolation, honest AI identity, and an Instagram-to-nurse acceptance journey. They run with temporary SQLite databases and randomly generated encryption keys. No real patient data or external API credentials are used. See [TEST_RESULTS.md](TEST_RESULTS.md) for the requirement-by-requirement results and remaining deployment gaps.
 
-The repository includes a GitHub Actions workflow that installs `requirements.txt` and runs the same tests on every push and pull request. To submit it to your own Git hosting account, create an empty private repository there, then run the following from this directory after replacing the URL:
-
-```bash
-git remote add origin YOUR_REPOSITORY_URL
-git push -u origin main
-```
+The private submission repository is [luvincent59-cloud/nightingale](https://github.com/luvincent59-cloud/nightingale). It includes a GitHub Actions workflow that installs `requirements.txt` and runs the same tests on every push and pull request. The local `origin` URL is already set. The first upload used the connected GitHub account because local Git credentials are not configured; future command-line pushes require GitHub authentication and a one-time history reconciliation. The submitted code and tests are already available at the link.
 
 The runtime database, local encryption key, virtual environment, and Python caches are excluded from Git. A fresh checkout recreates its own demo database and key on first launch.
 
